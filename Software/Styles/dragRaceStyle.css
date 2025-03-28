@@ -1,0 +1,27 @@
+.Info{
+    margin-left: 5%;
+    margin-bottom: 2%;
+    width: 80%;
+    float: left;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 5vh;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+.Menu{
+    margin-left: 5%;
+    float: left;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 4vh;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+.Menu input{
+    color: black;
+}

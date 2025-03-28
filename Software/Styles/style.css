@@ -1,0 +1,171 @@
+*{
+    color: white;
+}
+.unconfirmmed{
+    border-color: red;
+}
+.waiting{
+    border-color: gray;
+}
+.confirm{
+    border-color: #066cac;
+}
+span{
+    font-size: inherit;
+    font-weight: inherit;
+    font-family: inherit;
+    color: inherit;
+}
+body{
+    background-color: #202430;
+}
+.StatsUI{
+    width: 88%;
+    float: left;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+.StatsUI label{
+    margin-top: 2%;
+    font-weight: bold;
+    font-size: 3vw;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.StatsUI .Player {
+    margin-top: 2%;
+    font-weight: bold;
+    font-size: 4vw;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.StatsUI .StopWatch{
+    font-size: 10vw;
+    margin-top: -2%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.StatsUI .Checkpoints{
+    column-gap: 3vw;
+    column-count: 2;
+}
+.StatsUI .Checkpoints .Label{
+    display: block;
+    margin-top: 2%;
+    font-size: 3vw;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #5DC0FF;
+
+}
+.StatsUI .Checkpoints .Label button{
+    color: black;
+}
+.CommandMenu{
+    margin-top: .5%;
+    width: 12%;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.BasicButton{
+    background-color: #5DC0FF;
+    font-size: 1vw;
+    margin-top: 5%;
+    padding: .2vw;
+    border-style: solid;
+    border-color: white;
+    border-width: .5px;
+    border-radius: 2px;
+    width: 10vw;
+    height: 7vh;
+    font-weight: bolder;
+    color: white;
+    cursor: pointer;
+    transition: opacity 1s ease;
+}
+.BasicButton.Reset{
+    background-color: white;
+    color: black;
+}
+.BasicButton.End{
+    background-color: #B22222;
+    color: white;
+}
+.ConnectButton{
+    padding: 1% 5%;
+    background-color: #5DC0FF;
+    color: white;
+    font-size: 1vw;
+    cursor: pointer;
+    margin-left: 5%;
+    border-style: solid;
+    border-radius: 5px;
+    white-space: nowrap;
+}
+.Console {
+    width: 10vw;
+    height: 10vw;
+    overflow: auto;
+    background-color: #D3D3D3;
+    color: black;
+    padding-left: 5%;
+}
+
+.SimpleButton{
+    background-color: #5DC0FF;
+    font-size: 1vw;
+    margin-top: 5%;
+    padding: .2vw;
+}
+.BasicButton:active{
+    transition: opacity 1s ease;
+}
+.BottomMenu .Checkpoints{
+    display: flex;
+    align-self: center;
+    font-size: 1.2vw;
+}
+.OptionsButton{
+    width: 3vw;
+    height: 3vw;
+    cursor: pointer;
+}
+.CheckpointControllerDiv input{
+    width: .85vw;
+    height: .85vw;
+}
+.BottomMenu{
+    display: flex;
+    position: fixed;
+    bottom: 1.2%;
+    left: 1%;   
+    justify-content: space-evenly;
+    gap: 10%;
+}
+.BottomMenu .Checkpoints .Checkpoint{
+    border-color: #5DC0FF;
+    border-style: solid;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+    cursor: grab;
+}
+.EditableSpan{
+    cursor:text;
+}
+.BottomMenu .Checkpoints.reveal{
+    overflow: hidden;
+    animation: revealAnimation 0.5s forwards;
+}
+@keyframes revealAnimation {
+    from{
+        /* transform: translateX(-100%); */
+        clip-path: polygon(0 0, 1% 0, 1% 8%, 0 1%);
+    }
+    to {
+        /* transform: translateX(0); */
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+}

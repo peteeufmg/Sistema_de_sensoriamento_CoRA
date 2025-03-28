@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chronos Web</title>
+    <link rel="stylesheet" type="text/css" href="Styles/style.css">
+    <link rel="icon" href="Resources/Icon.ico" type="image/ico">
+</head>
+<body>
+        <div class="StatsUI">
+            <div class="Player">
+                <label id="Team">Equipe</label>
+                <label id="Attempt">Tentativa</label>
+            </div>
+            <div class="StopWatch" id="StopWatch">00:00:000</div>
+            <div class="Checkpoints" id="CheckpointsContainerUI"></div>
+        </div>
+        <div class="CommandMenu">
+            <button onclick="SerialCOM.serialToogleConnection()" id ="ConnectButton" class="ConnectButton">Conectar</button>
+            <div style="padding-bottom: 5%; align-items: center;">
+                <input type="checkbox" id="COMEnable" class="SimpleCheckButton" onchange="SerialCOM.isEnable = this.checked"/>
+                <label>Validar Entradas</label>
+            </div>
+            <div id="SerialConsole" class="Console" ondblclick="this.innerText = '';"></div>
+            <button id ="ResetButton" class="BasicButton Reset" onclick="lap.reset()">Resetar</button>
+            <button id ="EndButton" class="BasicButton End" onclick="lap.manualEnd()">Encerrar</button>
+        </div>
+    <div class="BottomMenu" id="BottomMenu">
+        <!-- <img src="Resources/icons/conf.svg" class="OptionsButton" onclick="BottomMenuUI.Checkpoints.toggleUI()" draggable="false"> -->
+        <img src="Resources/icons/proj.svg" class="OptionsButton" onclick="BottomMenuUI.ScoreBoardWindow.open()" draggable="false">
+        <img src="Resources/icons/raceFlag.svg" class="OptionsButton" onclick="BottomMenuUI.dragRaceWindow.open()" draggable="false">
+    </div>
+
+    
+    <script src="Scripts/StopWatch.JS"></script>
+    <script src="Scripts/SerialCOM.js"></script>
+    <script src="Scripts/Competitors.JS"></script>
+    <script src="Scripts/SerialMonitor/UI/CommandUI.JS"></script>
+    <script src="Scripts/SerialMonitor/UI/StatsUI.JS"></script>
+    <script src="Scripts/SerialMonitor/UI/BottomMenuUI.JS"></script>
+    <script src="Scripts/SerialMonitor/lapManager.JS"></script>
+    <script src="Scripts/SerialMonitor/Main.JS"></script>
+</body>
+</html>

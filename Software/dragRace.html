@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chronos Web</title>
+    <link rel="stylesheet" type="text/css" href="Styles/style.css">
+    <link rel="stylesheet" type="text/css" href="Styles/dragRaceStyle.css">
+    <link rel="icon" href="Resources/Icon.ico" type="image/ico">
+</head>
+<body>
+        <div class="StatsUI">
+            <label>Tentativa Atual</label>
+            <div class="StopWatch" id="StopWatch">00:00:000</div>
+        </div>
+        <div class="CommandMenu">
+            <button onclick="SerialCOM.serialToogleConnection()" id ="ConnectButton" class="ConnectButton">Conectar</button>
+            <div style="padding-bottom: 5%; align-items: center;">
+                <input type="checkbox" id="COMEnable" class="SimpleCheckButton" onchange="SerialCOM.isEnable = this.checked"/>
+                <label>Validar Entradas</label>
+            </div>
+            <div id="SerialConsole" class="Console" ondblclick="this.innerText = '';"></div>
+        </div>
+
+    <div class="Info">
+        <label id="BestTime">Melhor Tempo: <span>--.--.---.---</span></label>
+        <label id="TopSpeed">Maior velocidade: <span>--.--.---.---</span></label>
+        <label id="LowTime">Pior Tempo: <span>--.--.---.---</span></label>
+        <label id="LowSpeed">Menor velocidade: <span>--.--.---.---</span></label>
+        <label id="LastTime">Último Tempo: <span>--.--.---.---</span></label>
+        <label id="LastSpeed">Última velocidade: <span>--.--.---.---</span></label>
+        <label id="AverageSpeed">Velocidade média: <span>--.--.---.---</span></label>
+        <label id="AverageTime">Tempo médio: <span>--.--.---.---</span></label>
+        <label id="Iterations">Voltas Completas: <span>--.--.---.---</span></label>
+    </div>
+    <div class="Menu">
+        <label for="retas">Retas (32cm):</label>
+        <input type="number" id="retas" onchange="calcRaceSize()">
+        <label for="retasDuplas">Retas duplas (64cm):</label>
+        <input type="number" id="retasDuplas" onchange="calcRaceSize()">
+        <label for="curvaLonga">Curva longa (Raio = 54cm):</label>
+        <input type="number" id="curvaLonga" onchange="calcRaceSize()">
+        <label for="curvaCurta">Curva curta (Raio = 18cm):</label>
+        <input type="number" id="curvaCurta" onchange="calcRaceSize()">
+    </div>
+
+    <script src="Scripts/StopWatch.JS"></script>
+    <script src="Scripts/SerialCOM.js"></script>
+    <script src="Scripts/SerialMonitor/UI/CommandUI.JS"></script>
+    <script src="Scripts/SerialMonitor/UI/StatsUI.JS"></script>
+    <script src="Scripts/DragRaceWindow/lapManager.JS"></script>
+    <script src="Scripts/DragRaceWindow/Main.JS"></script>
+</body>
+</html>
